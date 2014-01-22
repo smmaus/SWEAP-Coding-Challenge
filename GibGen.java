@@ -23,6 +23,11 @@ import java.lang.StringBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * TESTING: Updated SWEAP code for the Git Quest!
+ * UPDATE: Number of characters scrambled.
+ */
+
 public class GibGen {
   
   private Scanner input;
@@ -32,6 +37,9 @@ public class GibGen {
   private char firstLetter;
   private String body;
   private char lastLetter;
+  
+  //UPDATED PORTION
+  private int chScrambled;
   
   public GibGen() {
     input = new Scanner(System.in);
@@ -51,6 +59,9 @@ public class GibGen {
     String text = getString("\nEnter text.\n").trim();
     String gibText = "";
     
+    //UPDATED PORTION
+    chScrambled = 0;
+    
     /**Each word becomes a token, which is then
       * scrambled one at a time, and then
       * added to one long result.
@@ -64,7 +75,8 @@ public class GibGen {
         gibText = gibText + " " + temp;
     }
     
-    System.out.println("\nHere you go!\n\n" + gibText); 
+    System.out.println("\nHere you go!\n\n" + gibText + 
+    		"\n\nNumber of characters scrambled: " + chScrambled); 
   }
   
   /**Function: finds exception tokens, such as punctuation
@@ -77,6 +89,9 @@ public class GibGen {
   public String gibberate(String s) {
     int size = s.length();
     String result = "";
+    
+    //UPDATED PORTION
+    chScrambled = chScrambled + s.length();
     
     //If the word is only 3 chars of less, scrambling not needed.
     if(size <= 3) 
