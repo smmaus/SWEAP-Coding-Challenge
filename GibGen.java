@@ -70,7 +70,7 @@ public class GibGen {
     st = new StringTokenizer(text);
     while (st.hasMoreTokens()) {
       String temp = gibberate(st.nextToken());
-      if(gibText.length()==0)
+      if(gibText.isEmpty())
         gibText = gibText + temp;
       else
         gibText = gibText + " " + temp;
