@@ -69,8 +69,9 @@ public class GibGen {
       * added to one long result.
       */
     st = new StringTokenizer(text);
+    String temp = "";
     while (st.hasMoreTokens()) {
-      String temp = gibberate(st.nextToken());
+      temp = gibberate(st.nextToken());
       if(gibText.isEmpty())
         gibText = gibText + temp;
       else
@@ -97,7 +98,7 @@ public class GibGen {
     
     //If the word is only 3 chars of less, scrambling not needed.
     if(size <= 3) 
-      result = s;
+      return s;
     
     //If the word is at least 4 chars long, scrambling proceeds.
     else {
@@ -176,11 +177,12 @@ public class GibGen {
     String result = "";
 
     //Adds each char in given string to ArrayList "letters."
-    for(char c: s.toCharArray())
-        letters.add(c);
+    for(char c: s.toCharArray()) {
+      letters.add(c);
+    }  
     
     //Scrambles values in "letters."
-    while(letters.size()!=0){
+    while(!letters.isEmpty()){
       int randPicker = (int)(Math.random()*letters.size());
       result = result + letters.remove(randPicker);
     }
@@ -215,13 +217,7 @@ public class GibGen {
     *      @require: s != null
     */
   public boolean isBodyException(String s) {
-    boolean b = false;
-    char one = s.charAt(0);
-    char two = s.charAt(1);
-    if(s.length()==2 && one==two) {
-      b= true;
-    }
-    return b;
+    return s.length() == 2 && s.charAt(0) == s.charAt(1);
   }
   
   /**Function: gets string value by prompting user
