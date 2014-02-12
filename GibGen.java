@@ -27,6 +27,7 @@ import java.util.List;
  * TESTING: Updated SWEAP code for the Git Quest!
  * UPDATE: Number of characters scrambled.
  * FOURTH COMMIT FOURTH COMMIT/Testing for Release branch
+ * UPDATE2: This UPDATE!
  */
 
 public class GibGen {
@@ -70,7 +71,7 @@ public class GibGen {
     st = new StringTokenizer(text);
     while (st.hasMoreTokens()) {
       String temp = gibberate(st.nextToken());
-      if(gibText.length()==0)
+      if(gibText.isEmpty())
         gibText = gibText + temp;
       else
         gibText = gibText + " " + temp;
