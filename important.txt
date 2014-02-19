@@ -1,3 +1,7 @@
 you gotta read this.
 
+<<<<<<< HEAD
 now now.
+=======
+I totally just read this, and now added this.
+>>>>>>> 6eb0407edef1478dac0949f113c51db04187a365
